@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <form action = '/blog' method='post' >
+            <h2>New Post: </h2>
+        <p>
+            Title for your new blog:
+            <input type ='text' name='text' value = {{title}}>
+        </p><span class="error">
+                {% if title_error %}
+                {{title_error }}
+              {% endif %}
+            </span>
+        <p>
+            Your new blog:
+            <textarea name='body' placeholder="Enter body here...">{{body}}</textarea>
+        </p><span class="error">
+            {% if body_error %}
+            {{body_error }}
+          {% endif %}
+            </span>
+            <br>
+        <input type="submit" value='Submit'/>
+    </form>
+
+{% endblock %}

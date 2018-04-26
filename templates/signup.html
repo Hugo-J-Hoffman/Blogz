@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<p>already have an account? <a href='login'>log in</a></p>
+<h2>Register New Account</h2>
+<form action="/signup" method="post">
+  <p><label>Email <input type="text" name="email"/></label><span class='error'>{% if email_error %}{{email_error }}{% endif %}</span></p>
+  <p><label>New Password <input type="password" name="password"/></label><span class="error">{% if password_error %}{{password_error }}{% endif %}</span></p>
+  <p><label>Verify Password <input type="password" name="vpassword"/></label><span class="error">{% if vpassword_error %}{{vpassword_error }}{% endif %}</span></p>
+  <p><input type="submit" value="Register"/></p>
+</form>
+
+{% endblock %}

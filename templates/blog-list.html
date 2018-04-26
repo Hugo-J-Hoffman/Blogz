@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if blogs|length == 0 %}
+<p>No blogs yet</p>
+{% endif %}
+
+<h2>Past Posts</h2>
+
+<ul>
+    {% for blog in blogs %}
+    <li><a href = {{'./index?id='~(blog.id)}} name =>{{blog.title}}</a></li>
+        <ul>{{blog.body}}</ul>
+    </label>
+    {% endfor %}
+</ul>
+
+{% endblock %}
